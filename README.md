@@ -1,2 +1,2 @@
 # Casino
-A casino made with java that takes place in the console.
+A casino made with Java that takes place in the console.
