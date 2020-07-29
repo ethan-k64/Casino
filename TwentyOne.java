@@ -3,11 +3,11 @@ import java.util.Scanner;
 
 public class TwentyOne extends Casino {
     // Class Variables
-    static int min = 1;
-    static int max = 10;
-    static int total = 0;
-    static int opponentTotal = 0;
-    static boolean done = false;
+    private static int min = 1;
+    private static int max = 10;
+    private static int total = 0;
+    private static int opponentTotal = 0;
+    private static boolean done = false;
 
     // Functions
     private void lose() {
@@ -17,7 +17,7 @@ public class TwentyOne extends Casino {
         System.out.println("Money: " + money);
 
         if (money > 0) {
-            System.out.println("Press 0 to return to home or 1 to play again: ");
+            System.out.println("Press 1 to play again or 0 to return to home: ");
         }
 
         done = true;
@@ -28,7 +28,7 @@ public class TwentyOne extends Casino {
         System.out.println("You Win!");
         
         System.out.println("Money: " + money);
-        System.out.println("Press 0 to return to home or 1 to play again: ");
+        System.out.println("Press 1 to play again or 0 to return to home: ");
 
         done = true;
     }
@@ -38,7 +38,7 @@ public class TwentyOne extends Casino {
         System.out.println("Tie!");
 
         System.out.println("Money: " + money);
-        System.out.println("Press 0 to return to home or 1 to play again: ");
+        System.out.println("Press 1 to play again or 0 to return to home: ");
 
         done = true;
     }
@@ -135,9 +135,9 @@ public class TwentyOne extends Casino {
                         }
                     
                     } else if (draw == 0) {
-
+                        
+                        // Bot Draws
                         while (total > opponentTotal) {
-                            // Bot Draws
                             opponentTotal += (int)(Math.random() * (max - min + 1) + min);
                         }
                         
