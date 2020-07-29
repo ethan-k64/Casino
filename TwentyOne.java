@@ -106,8 +106,10 @@ public class TwentyOne extends Casino {
                         total += (int)(Math.random() * (max - min + 1) + min);
 
                         // Bot Draws Card
-                        opponentTotal += (int)(Math.random() * (max - min + 1) + min);
-
+                        if (opponentTotal < 18) {
+                            opponentTotal += (int)(Math.random() * (max - min + 1) + min);
+                        }
+                        
                         // Display Hands
                         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-");
                         System.out.println("Opponent Total: " + opponentTotal);
@@ -133,9 +135,12 @@ public class TwentyOne extends Casino {
                         }
                     
                     } else if (draw == 0) {
-                        // Bot Draws
-                        opponentTotal += (int)(Math.random() * (max - min + 1) + min);
 
+                        while (total > opponentTotal) {
+                            // Bot Draws
+                            opponentTotal += (int)(Math.random() * (max - min + 1) + min);
+                        }
+                        
                         // Display Hands
                         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-");
                         System.out.println("Opponent Total: " + opponentTotal);
