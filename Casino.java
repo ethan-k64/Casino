@@ -26,6 +26,7 @@ public class Casino {
                 TwentyOne twentyOne = new TwentyOne();
                 twentyOne.play();
             } else if (gameInput == 0) {
+                System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-");
                 break;
             } else {
                 System.out.println("Invalid Option");
