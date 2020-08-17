@@ -73,9 +73,14 @@ public class TwentyOne extends Casino {
                 float bet = betScanner.nextFloat();
 
                 // Check If The Bet Is Valid
-                if (bet < 0) {
+                if (bet <= 0) {
                     System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-");
-                    System.out.println("Nice Try");
+                    System.out.println("Enter A Bet Greater Than 0");
+                    System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-");
+                    break;
+                } else if (bet > money) {
+                    System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-");
+                    System.out.println("Enter A Bet Within Your Money");
                     System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-");
                     break;
                 }
@@ -106,7 +111,7 @@ public class TwentyOne extends Casino {
                         total += (int)(Math.random() * (max - min + 1) + min);
 
                         // Bot Draws Card
-                        if (opponentTotal < 18) {
+                        if (opponentTotal < 17) {
                             opponentTotal += (int)(Math.random() * (max - min + 1) + min);
                         }
                         
@@ -122,8 +127,6 @@ public class TwentyOne extends Casino {
                         } else if (opponentTotal > 21 && total > 21) {
                             money += bet;
                             tie();
-                        } else if (opponentTotal == 21 && total < 21) {
-                            lose();
                         } else if (total == 21 && opponentTotal < 21) {
                             money += bet * 2;
                             win();
@@ -135,9 +138,9 @@ public class TwentyOne extends Casino {
                         }
                     
                     } else if (draw == 0) {
-                        
-                        // Bot Draws
+
                         while (total > opponentTotal) {
+                            // Bot Draws
                             opponentTotal += (int)(Math.random() * (max - min + 1) + min);
                         }
                         
