@@ -12,6 +12,7 @@ public class Casino {
             // Print Games
             System.out.println("1) Slots");
             System.out.println("2) 21");
+            System.out.println("3) Show Money");
             System.out.println("Enter a game number to play or 0 to exit: ");
 
             // Create Game Input
@@ -25,6 +26,10 @@ public class Casino {
             } else if (gameInput == 2) {
                 TwentyOne twentyOne = new TwentyOne();
                 twentyOne.play();
+            } else if (gameInput == 3) {
+                System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-");
+                System.out.println("Money: " + money);
+                System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-");
             } else if (gameInput == 0) {
                 System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-");
                 break;
