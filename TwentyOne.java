@@ -80,7 +80,7 @@ public class TwentyOne extends Casino {
                     break;
                 } else if (bet > money) {
                     System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-");
-                    System.out.println("Enter A Bet Within Your Money");
+                    System.out.println("Enter A Bet Within Your Budget");
                     System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-");
                     break;
                 }
@@ -142,13 +142,12 @@ public class TwentyOne extends Casino {
                         while (total > opponentTotal) {
                             // Bot Draws
                             opponentTotal += (int)(Math.random() * (max - min + 1) + min);
-                        }
-                        
-                        // Display Hands
-                        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-");
-                        System.out.println("Opponent Total: " + opponentTotal);
-                        System.out.println("Your Total: " + total);
 
+                            // Display Hands
+                            System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-");
+                            System.out.println("Opponent Total: " + opponentTotal);
+                            System.out.println("Your Total: " + total);
+                        }
                         // Check Who Wins Or Loses
                         if (opponentTotal == total) {
                             money += bet;
